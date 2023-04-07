@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laptop Price Predictor</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+	<div class="container">
+		<h1>Laptop Price Predictor</h1>
+		<form method="POST" action="{{ url_for('predict') }}">
+			<label for="os">Select Operating System:</label>
+			<select id="os" name="os">
+				<option value="Windows 11 Operating System">Windows 11</option>
+				<option value="Windows 10 Operating System">Windows 10</option>
+				<option value="Mac OS Operating System">Mac OS</option>
+				<option value="DOS Operating System">DOS</option>
+				<option value="Chrome Operating System">Chrome OS</option>
+			</select>
+			<br>
+			<label for="ram">Select RAM (in GB):</label>
+			<select id="ram" name="ram">
+				<option value="8 GB DDR4 RAM">8 GB DDR4 RAM</option>
+				<option value="16 GB DDR4 RAM">16 GB DDR4 RAM</option>
+				<option value="16 GB DDR5 RAM">16 GB DDR5 RAM</option>
+				<option value="4 GB DDR4 RAM">4 GB DDR4 RAM</option>
+				<option value="16 GB LPDDR4X RAM">16 GB LPDDR4X RAM</option>
+                <option value="8 GB LPDDR4X RAM">8 GB LPDDR4X RAM</option>
+				<option value="32 GB DDR5 RAM">32 GB DDR5 RAM</option>
+				<option value="16 GB LPDDR5 RAM">16 GB LPDDR5 RAM</option>
+				<option value="16 GB Unified Memory RAM">16 GB Unified Memory RAM</option>
+				<option value="8 GB Unified Memory RAM">8 GB Unified Memory RAM</option>
+
+			</select>
+			<br>
+			<label for="processor">Select Processor:</label>
+			<select id="processor" name="processor">
+				<option value="Intel Core i3 Processor">Intel Core i3 Processor</option>
+				<option value="Intel Core i5 Processor">Intel Core i5 Processor</option>
+				<option value="Intel Core i7 Processor">Intel Core i7 Processor</option>
+				<option value="Intel Core i9 Processor">Intel Core i9</option>
+				<option value="AMD Ryzen 3 Dual Core Processor">AMD Ryzen 3 Dual Core Processor</option>
+                <option value="AMD Ryzen 3 Quad Core Processor">AMD Ryzen 3 Dual Core Processor</option>
+				<option value="AMD Ryzen 5 Quad Core Processor">AMD Ryzen 5 Quad Core Processor</option>
+				<option value="AMD Ryzen 5 Hexa Core Processor">AMD Ryzen 5 Hexa Core Processor</option>
+				<option value="AMD Ryzen 7 Octa Core Processor ">AMD Ryzen 7 Octa Core Processor </option>
+				<option value="AMD Ryzen 9 Octa Core Processor">AMD Ryzen 9 Octa Core Processor</option>
+				<option value="Intel Celeron Dual Core Processor">Intel Celeron Dual Core Processor</option>
+			</select>
+			<br>
+			<label for="storage">Select Storage:</label>
+			<select id="storage" name="storage">
+                <option value="256 GB SSD">256 GB SSD</option>
+				<option value="512 GB SSD">512 GB SSD</option>
+                <option value="128 GB SSD">128 GB SSD</option>
+				<option value="1 TB SSD">1 TB SSD</option>
+				<option value="1 TB HDD256 GB SSD">1 TB HDD256 GB SSD </option>
+				<option value="1 TB HDD">1 TB HDD</option>
+			</select>
+			<br>
+			<input type="submit" value="Predict Price">
+		</form>
+        <div>
+            <h2>Predicted Price: {{predicted_price}}</h2>
+        </div>
+	</div>
+</body>
+<style>
+	/* Style for the container div */
+.container {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Style for the form */
+  form {
+    display: inline-block;
+    text-align: left;
+  }
+  
+  /* Style for the labels */
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Style for the select boxes */
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Style for the submit button */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Style for the predicted price */
+  h2 {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  
+</style>
+</html>
