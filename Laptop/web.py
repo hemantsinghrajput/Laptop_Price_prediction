@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 
 st.title("Laptop Price Prediction 💻💻")
-df=pickle.load(open('data.pkl', 'rb'))
-model = pickle.load(open('laptop.pkl', 'rb'))
+df=pickle.load(open('/data.pkl', 'rb'))
+model = pickle.load(open('/laptop.pkl', 'rb'))
 
 processor = st.selectbox("Select the Processor:- ", df["Processor"].unique())
 ram = st.selectbox("Select the RAM:- ", df["Ram"].unique())
